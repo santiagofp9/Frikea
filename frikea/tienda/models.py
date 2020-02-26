@@ -1,20 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Producto(models.Model):
-    nombre = models.CharField(max_length=30)
-    descripcion = models.CharField(max_length=300)
-    precio = models.FloatField(default=10)
-    stock = models.IntegerField()
-    imagen = models.CharField(max_length=40)
-    
-    def __str__(self):
-        return self.nombre
-
-class Carrito(models.Model):
-    producto = models.CharField(max_length=30)
-    usuario = models.CharField(max_length=30)
-    cantidad = models.IntegerField()
 
 class Usuario(models.Model):
     username = models.CharField(max_length=20)
@@ -23,4 +9,24 @@ class Usuario(models.Model):
     def __str__(self):
         return self.username
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=30)
+    
+    def __str__(self):
+        return self.nombre
+      
+class Producto(models.Model):
+    nombre = models.CharField(max_length=30)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True)
+    descripcion = models.TextField(max_length=300)
+    precio = models.DecimalField(default=10)
+    stock = models.IntegerField()
+    imagen = models.ImageField()
 
+    def __str__(self):
+        return self.nombre
+
+class Carrito(models.Model):
+    producto = models.ForeignKey(Producto, on_delete= models.CASCADE, null=True)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
+    cantidad = models.IntegerField()
