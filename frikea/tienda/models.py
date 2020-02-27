@@ -21,7 +21,7 @@ class Producto(models.Model):
     descripcion = models.TextField(max_length=300)
     precio = models.DecimalField(decimal_places=2, max_digits=6)
     stock = models.IntegerField()
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to = 'iemeges/')
 
     def __str__(self):
         return self.nombre
