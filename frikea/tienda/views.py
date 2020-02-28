@@ -17,3 +17,4 @@ class ListaProducto(ListView):
     template_name = 'tienda/product.html'
     context_object_name = 'produ'
     queryset = Producto.objects.all()
+

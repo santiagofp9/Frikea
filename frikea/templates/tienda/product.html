@@ -48,7 +48,7 @@
 				</div>
 				<div class="col-md-4 text-center animate-box">
 					<div class="product">
-						<div class="product-grid" style="background-image:url({% static 'iemeges/truelephone.jpg' %});">
+						<div class="product-grid" style="background-image:url({% static 'static/iemeges/truelephone.jpg' %});">
 							<div class="inner">
 								<p>
 									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
@@ -65,11 +65,12 @@
 				{% for p in produ %}
 				<div class="col-md-4 text-center animate-box">
 					<div class="product">
-						<div class="product-grid" style="background-image:url({{p.imagen}});">
+						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
 							<div class="inner">
 								<p>
 									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
 									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									{{p.imagen}}
 								</p>
 							</div>
 						</div>
