@@ -8,3 +8,6 @@ from .models import *
 
 class Inicio(TemplateView):
     template_name = 'tienda/index.html'
+
+class About(TemplateView):
+    template_name = 'tienda/about.html'
