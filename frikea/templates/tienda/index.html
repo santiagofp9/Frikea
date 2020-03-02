@@ -112,7 +112,7 @@
 				</div>
 			</div>
 			<div class="row">
-				{% for p in produ %}
+				{% for p in produ|slice:":6" %}
 				<div class="col-md-4 text-center animate-box"> 
 					<div class="product">
 						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
@@ -188,7 +188,7 @@
 	</div>
 	
 
-	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
+	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url({% static 'static/iemeges/static/iemeges/klaviatoardishche.jpg' %});">
 		<div class="container">
 			<div class="row">
 				<div class="display-t">
