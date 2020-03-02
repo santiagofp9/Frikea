@@ -22,8 +22,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tienda/', include(('tienda.urls','tienda'))),
-    path('productos/', ListaProducto.as_view(), name='productos'),
+    path('', include(('tienda.urls','tienda'))),
+    
 ]
 
 urlpatterns += staticfiles_urlpatterns()
