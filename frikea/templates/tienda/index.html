@@ -112,7 +112,7 @@
 				</div>
 			</div>
 			<div class="row">
-				{% for p in produ %}
+				{% for p in produ|slice:":6" %}
 				<div class="col-md-4 text-center animate-box"> 
 					<div class="product">
 						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
@@ -152,7 +152,7 @@
 									<figure>
 										<img src="{% static 'images/person1.jpg' %}" alt="user">
 									</figure>
-									<span>Jean Doe, via <a href="#" class="twitter">Twitter</a></span>
+									<span>Helen Chufe, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
 										<p>&ldquo;Si habéis decidido vender vuestra alma a Satán, este es el bolígrafo perfecto para firmar el contrato. (...) Siendo un bolígrafo, es más difícil rellenar el cartucho de tinta con tu sangre o la de un inocente.&rdquo;</p>
 									</blockquote>
@@ -163,7 +163,7 @@
 									<figure>
 										<img src="{% static 'images/person2.jpg' %}" alt="user">
 									</figure>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+									<span>Igor Dito, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
 										<p>&ldquo;Todo Director de empresa, CEO o puesto intermedio debería poder disfrutar de este elegante artículo que viene a decir "no hago nada, pero lo hago con estilo". Despidos, tiendas, productos que ya no se venden.&rdquo;</p>
 									</blockquote>
@@ -174,7 +174,7 @@
 									<figure>
 										<img src="{% static 'images/person3.jpg' %}" alt="user">
 									</figure>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+									<span>Penélope Luda, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
 										<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>
@@ -188,7 +188,7 @@
 	</div>
 	
 
-	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
+	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url({% static 'static/iemeges/static/iemeges/klaviatoardishche.jpg' %});">
 		<div class="container">
 			<div class="row">
 				<div class="display-t">

@@ -39,3 +39,6 @@ class CategoriaProducto(ListView):
        	parametro = self.kwargs.get('pk', None)
        	context['produ'] = Producto.objects.filter(categoria=parametro)
        	return context
+
+class Cart(TemplateView):
+    template_name = 'tienda/carrito.html'
