@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tienda/', include(('tienda.urls','tienda'))),
-    path('productos/', ListaProducto.as_view(), name='productos'),
+    
 ]
 
 urlpatterns += staticfiles_urlpatterns()
