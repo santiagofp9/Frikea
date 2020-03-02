@@ -15,6 +15,9 @@ class Inicio(ListView):
 
 class About(TemplateView):
     template_name = 'tienda/about.html'
+    
+class Contact(TemplateView):
+    template_name = 'tienda/contact.html'
 
 class ListaProducto(ListView):
     model = Producto
