@@ -15,5 +15,16 @@ class ListaProducto(ListView):
     model = Producto
     template_name = 'tienda/product.html'
     context_object_name = 'produ'
-    queryset = Producto.objects.all()
+    queryset = Producto.objects.all() 
+
+class ListaCategoria(ListView):
+    model = Categoria
+    template_name = 'uno/listadoEjercicio.html'
+
+    def get_context_data(self, **kwargs):
+       	context = super(ListaCategoria, self).get_context_data(**kwargs)
+       	parametro = self.kwargs.get('pk', None)
+       	context['ejercicios'] = Producto.objects.filter(tipo=parametro)
+       	return context
+
 
