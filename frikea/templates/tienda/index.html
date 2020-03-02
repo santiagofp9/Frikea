@@ -112,7 +112,7 @@
 				</div>
 			</div>
 			<div class="row">
-				{% for p in produ %}
+				{% for p in produ|slice:":6" %}
 				<div class="col-md-4 text-center animate-box"> 
 					<div class="product">
 						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
