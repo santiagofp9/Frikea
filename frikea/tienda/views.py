@@ -35,12 +35,15 @@ class ListaCategorias(ListView):
 
 class CategoriaProducto(ListView):
     model = Producto
-    template_name = 'tienda/product.html'
+    template_name = 'tienda/productCatego.html'
 
     def get_context_data(self, **kwargs):
        	context = super(CategoriaProducto, self).get_context_data(**kwargs)
        	parametro = self.kwargs.get('pk', None)
        	context['produ'] = Producto.objects.filter(categoria=parametro)
+        context['catenom'] = Categoria.objects.filter(id=parametro)
+        print(context['catenom'])
+        print(context['produ'])
        	return context
 
 class Cart(TemplateView):

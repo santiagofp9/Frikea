@@ -12,15 +12,15 @@ from django.views.generic import CreateView
 
 class RegistroUsu(CreateView):
     model = User
-    template_name = 'registroUsu.html'
+    template_name = 'tienda/registroUsu.html'
     form_class = SigninForm
-    success_url = reverse_lazy('listar')
+    success_url = reverse_lazy('frikea:login')
 
 class LoginUsu(FormView):
     model = User
-    template_name = 'login.html'
+    template_name = 'tienda/login.html'
     form_class = FormularioLogin
-    success_url = reverse_lazy('uno:listar')
+    success_url = reverse_lazy('tienda:inicio')
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -34,7 +34,7 @@ class LoginUsu(FormView):
 
 def LogoutUsu(request):
     logout(request)
-    return HttpResponseRedirect('/uno')
+    return HttpResponseRedirect('tienda:inicio')
 
 
 

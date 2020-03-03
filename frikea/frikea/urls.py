@@ -19,11 +19,15 @@ from tienda.views import *
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from usuario.views import *
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('tienda.urls','tienda'))),
-    
+    path('signin/', RegistroUsu.as_view(),name='signin'),
+    path('accounts/login/', LoginUsu.as_view(),name='login'),
+    path('logout/', login_required(LogoutUsu),name='logout'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
