@@ -13,7 +13,7 @@
 body {
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 17.5px;
   line-height: 1.7;
   color: #828282;
   background: #fff;
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-nav {
-  padding: 18px 0;
+  padding: 17.5px 0;
   background: #fff;
 }
 @media screen and (max-width: 768px) {
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .fh5co-nav #fh5co-logo {
-  font-size: 20px;
+  font-size: 30px;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: "Montserrat", Arial, sans-serif;
 }
 .fh5co-nav ul li a {
-  font-size: 13px;
+  font-size: 17.5px;
   padding: 30px 10px;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 1000;
 }
 #fh5co-hero .flexslider .flex-control-nav li a {
-  background: rgba(255, 255, 255, 0.2);
+  /*background: rgba(255, 255, 255, 0.2);*/
   box-shadow: none;
   width: 12px;
   height: 12px;
@@ -322,7 +322,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-hero .flexslider .flex-control-nav li a.flex-active {
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0,0,0,0.75);
 }
 #fh5co-hero .flexslider .flex-direction-nav {
   display: none;
@@ -338,7 +338,7 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 700px;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 400;
   color: #000;
   text-transform: uppercase;
@@ -354,13 +354,13 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 40px;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc .price {
-  font-size: 14px;
+  font-size: 17.5px;
   letter-spacing: 3px;
   display: block;
   margin-bottom: 20px;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
-  font-size: 18px;
+  font-size: 17.5px;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead {
   font-size: 20px;
@@ -637,7 +637,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #d1c286 !important;
   color: #fff;
   border: none !important;
-  font-size: 18px;
+  font-size: 17.5px;
   text-transform: uppercase;
 }
 #fh5co-header .display-tc .btn:hover,
@@ -776,7 +776,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .feature-center h3 {
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 24px;
   letter-spacing: 1px;
   font-weight: 600;
 }
@@ -838,7 +838,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #fff;
 }
 .product .desc h3 {
-  font-size: 14px;
+  font-size: 17.5px;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -973,7 +973,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-tabs .fh5co-tab-content-wrap .feed > div h3 {
   font-family: "Playfair Display", serif;
-  font-size: 18px;
+  font-size: 17.5px;
   display: inline-block;
   padding-right: 20px;
 }
@@ -1015,7 +1015,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #000;
 }
 .fh5co-heading p {
-  font-size: 18px;
+  font-size: 17.5px;
   line-height: 1.5;
   color: #828282;
 }
@@ -1023,7 +1023,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: block;
   margin-bottom: 10px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 17.5px;
   letter-spacing: 2px;
   font-family: "Montserrat", Arial, sans-serif;
 }
@@ -1507,7 +1507,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 8px 20px !important;
 }
 .btn.btn-lg {
-  padding: 18px 36px !important;
+  padding: 17.5px 36px !important;
 }
 .btn:hover, .btn:active, .btn:focus {
   box-shadow: none !important;
@@ -1643,7 +1643,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .btn.with-arrow:hover i {
   color: #fff;
-  right: 18px;
+  right: 17.5px;
   visibility: visible;
   opacity: 1;
 }
@@ -1653,7 +1653,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
   height: 54px;
-  font-size: 18px;
+  font-size: 17.5px;
   font-weight: 300;
 }
 .form-control:active, .form-control:focus {
