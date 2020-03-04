@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import ListView, TemplateView, CreateView
 from django.urls import reverse_lazy
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -49,3 +50,9 @@ class CategoriaProducto(ListView):
 
 class Cart(TemplateView):
     template_name = 'tienda/carrito.html'
+
+class AgregarProducto(CreateView):
+    model = Carrito
+    template_name = 'agregarProducto.html'
+    form_class = AgregarForm
+    success_url = '/' 

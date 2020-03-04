@@ -6,7 +6,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <form action="{% url 'agregarP' %}" method="POST">
+    <form action="{% url 'agregar' %}" method="POST">
       {% csrf_token %}
       <div class="modal-body">
         {{ form.as_p }}
