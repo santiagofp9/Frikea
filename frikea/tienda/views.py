@@ -55,4 +55,4 @@ class AgregarProducto(CreateView):
     model = Carrito
     template_name = 'agregarProducto.html'
     form_class = AgregarForm
-    success_url = '/' 
+    success_url = reverse_lazy('tienda:inicio')
