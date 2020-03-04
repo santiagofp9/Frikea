@@ -78,7 +78,7 @@
 						<li class="has-dropdown">
 							<a href="">Usuario</a>
 							<ul class="dropdown">
-								<li><button type="button" onclick="abrir_modal_signin('{% url 'signin' %}')" >Signin</button></li>
+								<li><a onclick="abrir_modal_signin('{% url 'signin' %}')">Registrarse</a></li>
 								<li><button type="button" onclick="abrir_modal_login('{% url 'login' %}')" >Login</button></li>
 								<li><button type="button" href="{% url 'logout' %}">Logout</button></li>
 							</ul>
@@ -89,7 +89,7 @@
 				<div class="col-md-2 col-xs-4 text-right hidden-xs menu-2">
 					<ul>
 						<li>Hola, {{user.username}}</li>
-						<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+						<li class="shopping-cart"><a href="{% url 'tienda:cart' %}" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
 					</ul>
 				</div>
 			
