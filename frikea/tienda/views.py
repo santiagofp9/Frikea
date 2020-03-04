@@ -48,11 +48,31 @@ class CategoriaProducto(ListView):
         print(context['produ'])
        	return context
 
-class Cart(TemplateView):
-    template_name = 'tienda/carrito.html'
-
 class AgregarProducto(CreateView):
     model = Carrito
-    template_name = 'agregarProducto.html'
+    template_name = 'tienda/agregarProducto.html'
     form_class = AgregarForm
     success_url = reverse_lazy('tienda:inicio')
+
+    def get_context_data(self, **kwargs):
+        context=super(AgregarProducto, self).get_context_data(**kwargs)
+        parametro = self.kwargs.get('pk', None)
+        context['producto'] =Producto.objects.filter(id=parametro)
+        return context
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        producto = Producto.objects.get(pk = self.kwargs.get('pk', None))
+        print('Producto'+ str(producto))
+        # usu = User.objects.get(pk = self.kwargs.get('id', None))
+        self.object.producto = producto
+        self.object.save()
+        return super(AgregarProducto, self).form_valid(form)
+
+class ListaCarrito(ListView):
+    model = Carrito
+    template_name = 'tienda/carrito.html'
+    context_object_name = 'carr'
+    queryset = Carrito.objects.all()
+
+
