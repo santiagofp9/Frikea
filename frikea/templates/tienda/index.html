@@ -118,7 +118,7 @@
 						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
 							<div class="inner">
 								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a class="icon" onclick="abrir_modal_agregar('{% url 'tienda:agregar' %}')"><i class="icon-shopping-cart"></i></a>
 									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
 								</p>
 							</div>
@@ -265,5 +265,18 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="agregar" role="dialog">
+	</div>
+	{% block extrajs %}
+	<script type="text/javascript">
+        var $ = jQuery.noConflict();
+        function abrir_modal_agregar(url){
+            $('#agregar').load(url,function(){
+            $(this).modal('show');
+            });
+        }		
+    </script>
+	{% endblock extrajs %}
 
 {% endblock content %}
