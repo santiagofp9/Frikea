@@ -13,5 +13,5 @@ urlpatterns = [
     path('cart/', ListaCarrito.as_view(), name='cart'),
     path('agregar/<int:pk>', AgregarProducto.as_view(), name='agregar'),
     path('eliminar/<int:pk>',EliminarProducto.as_view(), name ='eliminar'),
-    path('pagar/<int:pk>',VaciarCarrito.as_view(), name ='pagar'),
+    path('pagar/',VaciarCarrito.as_view(), name ='pagar'),
 ]

@@ -64,8 +64,9 @@ class AgregarProducto(CreateView):
         self.object = form.save(commit=False)
         producto = Producto.objects.get(pk = self.kwargs.get('pk', None))
         self.object.producto = producto
-        #user = User.objects.get(pk = self.kwargs.get('id', None))
-        #self.object.user = user
+        user = self.request.user.id
+        usuario = User.objects.get(pk = user)
+        self.object.usuario = usuario
         self.object.save()
         return super(AgregarProducto, self).form_valid(form)
 
@@ -85,9 +86,11 @@ class EliminarProducto(DeleteView):
 class VaciarCarrito(DeleteView):
     model = Carrito
     success_url = reverse_lazy('tienda:cart')
+    #queryset = Carrito.objects.all().clear()
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
-        #Carrito.clear('producto')
+        
+         
 
 

@@ -50,14 +50,14 @@
                 </div>
             </div>
         </div>
-        {% for carr in carr %}
+        {% if carr %}
         <div class="pull-right" style="margin: 10px">
-            <a href="{% url 'tienda:pagar' carr.producto.id  %}" class="btn btn-success pull-right">Pagar</a>
+            <a href="{% url 'tienda:pagar' %}" class="btn btn-success pull-right">Pagar</a>
             <div class="pull-right" style="margin: 5px">
                 Precio total: <b>50.00€</b>
             </div>
         </div>
-        {% endfor %}
+        {% endif %}
     </div>
 </div>
 </div>
