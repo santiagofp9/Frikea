@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block content %}
-	
-	<div class="fh5co-loader"></div>
-	<div id="page">
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({% static 'static/iemeges/static/iemeges/cutleboory.jpg' %});">
+<div class="fh5co-loader"></div>
+<div id="page">
+
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+		style="background-image:url({% static 'static/iemeges/static/iemeges/cutleboory.jpg' %});">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -20,25 +21,27 @@
 			</div>
 		</div>
 	</header>
-	
-	
+
+
 	<div id="fh5co-product">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<span>Cosas Interesantes</span>
 					<h2>{{categoria.nombre}}</h2>
-					<p>Esto es lo que pudimos traer con nuestras manos desde el almacén. Cuando tengamos un toro o más personal o podamos pagar la cuota del gimnasio, aparecerán más productos.</p>
+					<p>Esto es lo que pudimos traer con nuestras manos desde el almacén. Cuando tengamos un toro o más
+						personal o podamos pagar la cuota del gimnasio, aparecerán más productos.</p>
 				</div>
 			</div>
 			<div class="row">
 				{% for p in produ %}
-				<div class="col-md-4 text-center animate-box"> 
+				<div class="col-md-4 text-center animate-box">
 					<div class="product">
 						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
 							<div class="inner">
 								<p>
-									<a class="icon" onclick="abrir_modal_agregar('{% url 'tienda:agregar' p.id %}')"><i class="icon-shopping-cart"></i></a>
+									<a class="icon" onclick="abrir_modal_agregar('{% url 'tienda:agregar' p.id %}')"><i
+											class="icon-shopping-cart"></i></a>
 									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
 								</p>
 							</div>
@@ -57,19 +60,19 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<div class="modal fade" id="agregar" role="dialog">
 	</div>
-	
-{% endblock content %}
 
-{% block extrajs %}
+	{% endblock content %}
+
+	{% block extrajs %}
 	<script type="text/javascript">
-        var $ = jQuery.noConflict();
-        function abrir_modal_agregar(url){
-            $('#agregar').load(url,function(){
-            $(this).modal('show');
-            });
-        }		
-    </script>
-{% endblock extrajs %}
+		var $ = jQuery.noConflict();
+		function abrir_modal_agregar(url) {
+			$('#agregar').load(url, function () {
+				$(this).modal('show');
+			});
+		}		
+	</script>
+	{% endblock extrajs %}

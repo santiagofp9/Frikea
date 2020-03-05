@@ -1,105 +1,119 @@
 {% extends 'tienda/plantilla.html' %}
 {% load static %}
 {% block content %}
-	
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({% static 'images/orden 1.jpg' %});">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Sobre Nosotros</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	
-	<div id="fh5co-about">
-		<div class="container">
-			<div class="about-content">
-				<div class="row animate-box">
-					<div class="col-md-6">
-						<div class="desc">
-							<h3>Historia de la Compañía</h3>
-							<p>Open Mind nace con la intención de abrir las mentes a la percepción de los objetos que nos rodean en torno a nuestra experiencia vital .</p>
-						</div>
-						<div class="desc">
-							<h3>Misión &amp; Visión</h3>
-							<p>Para alcanzar nuestros objetivos económicos no dudados en poner a tu disposición gran cantidad de artículos con una utilidad relativa.</p> 
-							<p>Nos gustaría que nuestros clientes disfrutaran de nuestros productos como de la vida misma.</p>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<img class="img-responsive" src="{% static 'static/iemeges/static/iemeges/skaüch_krasred.jpg' %}" alt="about">
-					</div>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Empleados</span>
-					<h2>Conoce a nuestro equipo</h2>
-					<p>Un equipo bien compuesto, no se descompone.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
-					<div class="fh5co-staff">
-						<img src="{% static 'images/aliona.jpg' %}" alt="Free HTML5 Templates by gettemplates.co">
-						<h3>Aliona</h3>
-						<strong class="role">Programadora en los descansos</strong>
-							Llevo infiltrada 3 meses como programadora, duermo debajo de la mesa y como las sobras de la cocina, todavía no se ha dado cuenta nadie. No tengo ni idea de programar y odio las matemáticas desde 2001.</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
-					<div class="fh5co-staff">
-						<img src="{% static 'images/elena.jpg' %}" alt="Free HTML5 Templates by gettemplates.co">
-						<h3>Elena</h3>
-						<strong class="role">Co-Owner</strong>
-						<p>Ya desde pequeña he sido una mujer con suerte: nací justo el día de mi cumpleaños. Aviso a navegantes: Aconsejo que no me sigais en twitter, según mi psiquiatra tengo manía persecutoria digital. A nadie le interesa mi vida pero de cualquier manera la hago pública para sentirme menos miserable.</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
-					<div class="fh5co-staff">
-						<img src="{% static 'images/lali.jfif' %}" alt="Free HTML5 Templates by gettemplates.co">
-						<h3>Lali</h3>
-						<strong class="role">Paciente sin tiempo</strong>
-							Ikea me persigue porque robé la fórmula de sus albóndigas y el PNG de su logo. Cuando me den la ayuda legal que me prometieron les pasaré la cantidad de carne de caballo que llevan...
-						</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
-					<div class="fh5co-staff">
-						<img src="{% static 'images/santiago.webp' %}" alt="Free HTML5 Templates by gettemplates.co">
-						<h3>Santiago</h3>
-						<strong class="role">Diseñador</strong>
-						<p>Nací a los 7 años en México. A los 9 escribí mis memorias 'Pomelos Agrios'(disponible en MEGA). Diseñé miles de inventos increibles que me habrían convertido en el hombre más rico del mundo... pero los guarde en un pen drive que terminó en la lavadora. Ahora tengo un gato y un blog. Si la vida de da limones... ¡Saca el tequila!</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
+
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+	style="background-image:url({% static 'images/orden 1.jpg' %});">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<div class="display-t">
+					<div class="display-tc animate-box" data-animate-effect="fadeIn">
+						<h1>Sobre Nosotros</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</header>
+
+<div id="fh5co-about">
+	<div class="container">
+		<div class="about-content">
+			<div class="row animate-box">
+				<div class="col-md-6">
+					<div class="desc">
+						<h3>Historia de la Compañía</h3>
+						<p>Open Mind nace con la intención de abrir las mentes a la percepción de los objetos que nos
+							rodean en torno a nuestra experiencia vital .</p>
+					</div>
+					<div class="desc">
+						<h3>Misión &amp; Visión</h3>
+						<p>Para alcanzar nuestros objetivos económicos no dudados en poner a tu disposición gran
+							cantidad de artículos con una utilidad relativa.</p>
+						<p>Nos gustaría que nuestros clientes disfrutaran de nuestros productos como de la vida misma.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<img class="img-responsive" src="{% static 'static/iemeges/static/iemeges/skaüch_krasred.jpg' %}"
+						alt="about">
+				</div>
+			</div>
+		</div>
+		<div class="row animate-box">
+			<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+				<span>Empleados</span>
+				<h2>Conoce a nuestro equipo</h2>
+				<p>Un equipo bien compuesto, no se descompone.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
+				<div class="fh5co-staff">
+					<img src="{% static 'images/aliona.jpg' %}" alt="Free HTML5 Templates by gettemplates.co">
+					<h3>Aliona</h3>
+					<strong class="role">Programadora en los descansos</strong>
+					Llevo infiltrada 3 meses como programadora, duermo debajo de la mesa y como las sobras de la cocina,
+					todavía no se ha dado cuenta nadie. No tengo ni idea de programar y odio las matemáticas desde 2001.
+					</p>
+					<ul class="fh5co-social-icons">
+						<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
+				<div class="fh5co-staff">
+					<img src="{% static 'images/elena.jpg' %}" alt="Free HTML5 Templates by gettemplates.co">
+					<h3>Elena</h3>
+					<strong class="role">Co-Owner</strong>
+					<p>Ya desde pequeña he sido una mujer con suerte: nací justo el día de mi cumpleaños. Aviso a
+						navegantes: Aconsejo que no me sigais en twitter, según mi psiquiatra tengo manía persecutoria
+						digital. A nadie le interesa mi vida pero de cualquier manera la hago pública para sentirme
+						menos miserable.</p>
+					<ul class="fh5co-social-icons">
+						<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
+				<div class="fh5co-staff">
+					<img src="{% static 'images/lali.jfif' %}" alt="Free HTML5 Templates by gettemplates.co">
+					<h3>Lali</h3>
+					<strong class="role">Paciente sin tiempo</strong>
+					Ikea me persigue porque robé la fórmula de sus albóndigas y el PNG de su logo. Cuando me den la
+					ayuda legal que me prometieron les pasaré la cantidad de carne de caballo que llevan...
+					</p>
+					<ul class="fh5co-social-icons">
+						<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3 animate-box" data-animate-effect="fadeIn">
+				<div class="fh5co-staff">
+					<img src="{% static 'images/santiago.webp' %}" alt="Free HTML5 Templates by gettemplates.co">
+					<h3>Santiago</h3>
+					<strong class="role">Diseñador</strong>
+					<p>Nací a los 7 años en México. A los 9 escribí mis memorias 'Pomelos Agrios'(disponible en MEGA).
+						Diseñé miles de inventos increibles que me habrían convertido en el hombre más rico del mundo...
+						pero los guarde en un pen drive que terminó en la lavadora. Ahora tengo un gato y un blog. Si la
+						vida de da limones... ¡Saca el tequila!</p>
+					<ul class="fh5co-social-icons">
+						<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock content %}

@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block content %}
-	
-	<div class="fh5co-loader"></div>
-	<div id="page">
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({% static 'static/iemeges/static/iemeges/cutleboory.jpg' %});">
+<div class="fh5co-loader"></div>
+<div id="page">
+
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+		style="background-image:url({% static 'static/iemeges/static/iemeges/cutleboory.jpg' %});">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -14,7 +15,7 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>{% for c in catenom %}
-									{{c.nombre}}
+								{{c.nombre}}
 								{% endfor %}
 							</h1>
 						</div>
@@ -23,20 +24,20 @@
 			</div>
 		</div>
 	</header>
-	
-	
+
+
 	<div id="fh5co-product">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<span>Alguna cosas Interesantes otras No</span>
 					<h2>{{categoria.nombre}}</h2>
-					
+
 				</div>
 			</div>
 			<div class="row">
 				{% for p in produ %}
-				<div class="col-md-4 text-center animate-box"> 
+				<div class="col-md-4 text-center animate-box">
 					<div class="product">
 						<div class="product-grid" style="background-image:url('{{ p.imagen.url }}');">
 							<div class="inner">
@@ -60,5 +61,5 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
-{% endblock content %}
+
+	{% endblock content %}
