@@ -71,12 +71,13 @@ class AgregarProducto(CreateView):
 class ListaCarrito(ListView):
     model = Carrito
     template_name = 'tienda/carrito.html'
-    context_object_name = 'carr'
-
-    def get(self, request, *args, **kwargs):
+    
+    def get_context_data(self, **kwargs):
+        context=super(ListaCarrito, self).get_context_data(**kwargs)
         user = self.request.user.id
         usuario = User.objects.get(pk = user)
-        Carrito.objects.filter(usuario=usuario)
+        context['carr'] =Carrito.objects.filter(usuario=usuario)
+        return context
         
 
 class EliminarProducto(DeleteView):
