@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.views.generic.edit import FormView
 from django.contrib.auth import login, logout
@@ -6,7 +6,6 @@ from usuario.forms import FormularioLogin, SigninForm
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView
-
 
 # Create your views here.
 

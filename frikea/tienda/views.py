@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.views.generic import ListView, TemplateView, CreateView, DeleteView
+from django.views.generic import View, ListView, TemplateView, CreateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
 from .forms import *
@@ -44,8 +44,6 @@ class CategoriaProducto(ListView):
        	parametro = self.kwargs.get('pk', None)
        	context['produ'] = Producto.objects.filter(categoria=parametro)
         context['catenom'] = Categoria.objects.filter(id=parametro)
-        print(context['catenom'])
-        print(context['produ'])
        	return context
 
 class AgregarProducto(CreateView):
@@ -74,7 +72,12 @@ class ListaCarrito(ListView):
     model = Carrito
     template_name = 'tienda/carrito.html'
     context_object_name = 'carr'
-    queryset = Carrito.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        user = self.request.user.id
+        usuario = User.objects.get(pk = user)
+        Carrito.objects.filter(usuario=usuario)
+        
 
 class EliminarProducto(DeleteView):
     model = Producto
@@ -83,13 +86,16 @@ class EliminarProducto(DeleteView):
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
 
-class VaciarCarrito(DeleteView):
+
+class VaciarCarrito(View):
     model = Carrito
-    success_url = reverse_lazy('tienda:cart')
-    #queryset = Carrito.objects.all().clear()
 
     def get(self, request, *args, **kwargs):
-        return self.post(request, *args, **kwargs)
+        user = self.request.user.id
+        usuario = User.objects.get(pk = user)
+        
+        Carrito.objects.filter(usuario=usuario).delete()
+        return redirect('tienda:cart')
         
          
 
