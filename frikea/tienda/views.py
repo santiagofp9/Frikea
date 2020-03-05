@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.views.generic import ListView, TemplateView, CreateView
+from django.views.generic import ListView, TemplateView, CreateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
 from .forms import *
@@ -64,8 +64,8 @@ class AgregarProducto(CreateView):
         self.object = form.save(commit=False)
         producto = Producto.objects.get(pk = self.kwargs.get('pk', None))
         self.object.producto = producto
-        user = User.objects.get(pk = self.kwargs.get('id', None))
-        self.object.user = user
+        #user = User.objects.get(pk = self.kwargs.get('id', None))
+        #self.object.user = user
         self.object.save()
         return super(AgregarProducto, self).form_valid(form)
 
@@ -74,5 +74,12 @@ class ListaCarrito(ListView):
     template_name = 'tienda/carrito.html'
     context_object_name = 'carr'
     queryset = Carrito.objects.all()
+
+class EliminarProducto(DeleteView):
+    model = Producto
+    success_url = reverse_lazy('tienda:cart')
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
 
 

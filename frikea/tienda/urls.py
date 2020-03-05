@@ -11,5 +11,6 @@ urlpatterns = [
     path('about/', About.as_view(), name='about'),
     path('contact/', Contact.as_view(), name='contact'),
     path('cart/', ListaCarrito.as_view(), name='cart'),
-    path('agregar/<int:pk>/<int:id>', AgregarProducto.as_view(), name='agregar'),
+    path('agregar/<int:pk>', AgregarProducto.as_view(), name='agregar'),
+    path('eliminar/<int:pk>',EliminarProducto.as_view(), name ='eliminar'),
 ]
