@@ -44,10 +44,6 @@
 	<!-- Modernizr JS -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
-	<!-- Carrito -->
-
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
 	<!-- FOR IE9 below -->
@@ -78,8 +74,14 @@
 							</li>
 							<li><a href="{% url 'tienda:about' %}">Acerca de</a></li>
 							<li><a href="{% url 'tienda:contact' %}">Contacto</a></li>
+						</ul>
+
+					</div>
+					<div class="col-md-2 col-xs-4 text-right hidden-xs menu-2">
+						<ul>
+							<li>Hola, {{user.username}}</li>
 							<li class="has-dropdown">
-								<a href="">Usuario</a>
+								<a href=""><i class="icon-user"></i></a>
 								<ul class="dropdown">
 									<li><a href="#" onclick="abrir_modal_signin('{% url 'signin' %}')">Registrarse</a>
 									</li>
@@ -88,14 +90,8 @@
 									<li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
 								</ul>
 							</li>
-						</ul>
-
-					</div>
-					<div class="col-md-2 col-xs-4 text-right hidden-xs menu-2">
-						<ul>
-							<li>Hola, {{user.username}}</li>
 							<li class="shopping-cart"><a href="{% url 'tienda:cart' %}"
-									class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a>
+									class="cart"><span><i class="icon-shopping-cart"></i></span></a>
 							</li>
 						</ul>
 					</div>

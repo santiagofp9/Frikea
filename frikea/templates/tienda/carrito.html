@@ -2,63 +2,74 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <div class="card shopping-cart">
-        <div class="card-header bg-dark text-light">
-            <i class="icon-shopping-cart" aria-hidden="true"></i>
-            <a href="" class="btn btn-outline-info btn-sm pull-right">Continuar comprando</a>
-            <div class="clearfix"></div>
+
+
+<div id="fh5co-cart" class="fh5co-bg-section">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <span>La compra de tu vida</span>
+                <h2>Carrito</h2>
+            </div>
         </div>
-        <div class="card-body">
-            <!-- PRODUCT -->
-            <div class="row">
-                {% for c in carr %}
-                <div class="col-12 col-sm-12 col-md-2 text-center">
-                    <img class="img-responsive" src="{{ c.producto.imagen.url }}" alt="prewiew" width="120" height="80">
-                </div>
-                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                    <h4 class="product-name"><strong>{{c.producto.nombre}}</strong></h4>
-                    <h4>
-                        <small>{{c.producto.descripcion}}</small>
-                    </h4>
-                </div>
-                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                    <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                        <h6><strong>{{c.producto.precio}}<span class="text-muted">x</span></strong></h6>
-                    </div>
-                    <div class="col-4 col-sm-4 col-md-4">
-                        <div class="quantity">
-                            <h6><strong><span class="text-muted">x</span>{{c.cantidad}}</strong></h6>
+        <div class="row ">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row animate-box align-items-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive table-bordered table-dark">
+                              <thead>
+                                    <tr>
+                                        <th class="text-center cart">PRODUCTO</th>
+                                        <th class="text-center cart">NOMBRE</th>
+                                        <th class="text-center cart">PRECIO</th>
+                                        <th class="text-center cart">CANTIDAD</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for c in carr %}
+                                    <tr>
+                                        <td class="cart_product_img aling-middle">
+                                            <img  class="img-responsive" src="{{ c.producto.imagen.url }}" alt="Product">
+                                        </td>
+                                        <td class="cart_product_desc aling-middle">
+                                            <h5>{{c.producto.nombre}}</h5>
+                                        </td>
+                                        <td class="price aling-middle">
+                                            <span>{{c.producto.precio}}</span>
+                                        </td>
+                                        <td class="qty aling-middle">
+                                            <div class="qty-btn d-flex">
+                                                
+                                                <div class="quantity">
+                                                    <h6><strong><span class="text-muted">x</span>{{c.cantidad}}</strong></h6>
+                                                    <a class="btn btn-outline-danger btn-xs" href="{% url 'tienda:eliminar' c.producto.id %}"><i class="icon-trash" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    {% endfor %}     
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="col-2 col-sm-2 col-md-2 text-right">
-                        <a class="btn btn-outline-danger btn-xs" href="{% url 'tienda:eliminar' c.producto.id %}"><i class="icon-trash" aria-hidden="true"></i></a>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-summary">
+                            <h5>TOTAL COMPRA</h5>
+                            <ul class="list-unstyled">
+                                <li><span>SUBTOTAL:</span> <span>$140.00</span></li>
+                                <li><span>GASTOS DE ENVÍO:</span> <span>Free</span></li>
+                                <li><span>TOTALl:</span> <span>$140.00</span></li>
+                            </ul>
+                            <div class="cart-btn mt-100">
+                                <a href="#" class="btn btn-primary btn-outline btn-block">PAGAR</a>
+                                <a href="{% url 'tienda:productos' %}" class="btn btn-primary btn-outline btn-block">SEGUIR COMPRANDO</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-            <hr>
-            <!-- END PRODUCT -->
-            <a href="" class="btn btn-outline-secondary pull-right">Actualizar carro de la compra</a>
         </div>
     </div>
-    <div class="card-footer">
-        <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
-            <div class="row">
-                <div class="col-6">
-                    <input type="submit" class="btn btn-default" value="Agregar">
-                </div>
-            </div>
-        </div>
-        {% if carr %}
-        <div class="pull-right" style="margin: 10px">
-            <a href="{% url 'tienda:pagar' %}" class="btn btn-success pull-right">Pagar</a>
-            <div class="pull-right" style="margin: 5px">
-                Precio total: <b>50.00€</b>
-            </div>
-        </div>
-        {% endif %}
-    </div>
-</div>
 </div>
 {% endblock content %}
