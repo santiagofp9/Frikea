@@ -82,4 +82,12 @@ class EliminarProducto(DeleteView):
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
 
+class VaciarCarrito(DeleteView):
+    model = Carrito
+    success_url = reverse_lazy('tienda:cart')
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+        #Carrito.clear('producto')
+
 

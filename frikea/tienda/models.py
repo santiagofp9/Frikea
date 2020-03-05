@@ -3,13 +3,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-"""class Usuario(models.Model):
-    username = models.CharField(max_length=20)
-    password = models.CharField(max_length=15)
-
-    def __str__(self):
-        return self.username"""
-
 class Categoria(models.Model):
     nombre = models.CharField(max_length=30)
     
