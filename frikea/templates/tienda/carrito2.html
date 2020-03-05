@@ -1,0 +1,75 @@
+{% extends 'tienda/plantilla.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div id="fh5co-cart" class="fh5co-bg-section">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <span>La compra de tu vida</span>
+                <h2>Carrito</h2>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row animate-box align-items-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive table-bordered table-dark">
+                              <thead>
+                                    <tr>
+                                        <th class="text-center cart">PRODUCTO</th>
+                                        <th class="text-center cart">NOMBRE</th>
+                                        <th class="text-center cart">PRECIO</th>
+                                        <th class="text-center cart">CANTIDAD</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for c in carr %}
+                                    <tr>
+                                        <td class="cart_product_img aling-middle">
+                                            <img  class="img-responsive" src="{{ c.producto.imagen.url }}" alt="Product">
+                                        </td>
+                                        <td class="cart_product_desc aling-middle">
+                                            <h5>{{c.producto.nombre}}</h5>
+                                        </td>
+                                        <td class="price aling-middle">
+                                            <span>{{c.producto.precio}}</span>
+                                        </td>
+                                        <td class="qty aling-middle">
+                                            <div class="qty-btn d-flex">
+                                                
+                                                <div class="quantity">
+                                                    <h6><strong><span class="text-muted">x</span>{{c.cantidad}}</strong></h6>
+                                                    <a class="btn btn-outline-danger btn-xs" href="{% url 'tienda:eliminar' c.producto.id %}"><i class="icon-trash" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    {% endfor %}     
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-summary">
+                            <h5>TOTAL COMPRA</h5>
+                            <ul class="list-unstyled">
+                                <li><span>SUBTOTAL:</span> <span>$140.00</span></li>
+                                <li><span>GASTOS DE ENVÍO:</span> <span>Free</span></li>
+                                <li><span>TOTALl:</span> <span>$140.00</span></li>
+                            </ul>
+                            <div class="cart-btn mt-100">
+                                <a href="#" class="btn btn-primary btn-outline btn-block">PAGAR</a>
+                                <a href="{% url 'tienda:productos' %}" class="btn btn-primary btn-outline btn-block">SEGUIR COMPRANDO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
