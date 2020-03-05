@@ -14,17 +14,17 @@
             <div class="row">
                 {% for c in carr %}
                 <div class="col-12 col-sm-12 col-md-2 text-center">
-                    <img class="img-responsive" src="{{ c.producto_id.imagen }}" alt="prewiew" width="120" height="80">
+                    <img class="img-responsive" src="{{ c.producto.imagen }}" alt="prewiew" width="120" height="80">
                 </div>
                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                    <h4 class="product-name"><strong>{{c.producto_id.nombre}}</strong></h4>
+                    <h4 class="product-name"><strong>{{c.producto.nombre}}</strong></h4>
                     <h4>
-                        <small>{{c.producto_id.descripcion}}</small>
+                        <small>{{c.producto.descripcion}}</small>
                     </h4>
                 </div>
                 <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
                     <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                        <h6><strong>{{c.producto_id.precio}}<span class="text-muted">x</span></strong></h6>
+                        <h6><strong>{{c.producto.precio}}<span class="text-muted">x</span></strong></h6>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
                         <div class="quantity">
