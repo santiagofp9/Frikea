@@ -63,9 +63,9 @@ class AgregarProducto(CreateView):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         producto = Producto.objects.get(pk = self.kwargs.get('pk', None))
-        print('Producto'+ str(producto))
-        # usu = User.objects.get(pk = self.kwargs.get('id', None))
         self.object.producto = producto
+        user = User.objects.get(pk = self.kwargs.get('id', None))
+        self.object.user = user
         self.object.save()
         return super(AgregarProducto, self).form_valid(form)
 
