@@ -16,6 +16,9 @@ class Inicio(ListView):
 
 class About(TemplateView):
     template_name = 'tienda/about.html'
+
+class Single(TemplateView):
+    template_name = 'tienda/single.html'
     
 class Contact(TemplateView):
     template_name = 'tienda/contact.html'

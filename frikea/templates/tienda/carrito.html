@@ -59,10 +59,10 @@
                             <ul class="list-unstyled">
                                 <li><span>SUBTOTAL:</span> <span>$140.00</span></li>
                                 <li><span>GASTOS DE ENVÍO:</span> <span>Free</span></li>
-                                <li><span>TOTALl:</span> <span>$140.00</span></li>
+                                <li><span>TOTAL:</span> <span>$140.00</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
-                                <a href="#" class="btn btn-primary btn-outline btn-block">PAGAR</a>
+                                <a href="{% url 'tienda:pagar' %}" class="btn btn-primary btn-outline btn-block">PAGAR</a>
                                 <a href="{% url 'tienda:productos' %}" class="btn btn-primary btn-outline btn-block">SEGUIR COMPRANDO</a>
                             </div>
                         </div>
