@@ -79,19 +79,25 @@
 					</div>
 					<div class="col-md-2 col-xs-4 text-right hidden-xs menu-2">
 						<ul>
-							<li>Hola, {{user.username}}</li>
+							{% if user.is_authenticated %}
+								<li>Hola, {{user.username}}</li>
+							{% endif %} 	
 							<li class="has-dropdown">
 								<a href=""><i class="icon-user"></i></a>
 								<ul class="dropdown">
-									<li><a href="#" onclick="abrir_modal_signin('{% url 'signin' %}')">Registrarse</a>
-									</li>
-									<li><a href="#" onclick="abrir_modal_login('{% url 'login' %}')">Iniciar Sesión</a>
-									</li>
-									<li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+									{% if user.is_authenticated %}
+										<li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+									{% else %}
+										<li><a href="#" onclick="abrir_modal_signin('{% url 'signin' %}')">Registrarse</a>
+										</li>
+										<li><a href="#" onclick="abrir_modal_login('{% url 'login' %}')">Iniciar Sesión</a>
+										</li>
+									{% endif %} 
+									
 								</ul>
 							</li>
 							<li class="shopping-cart"><a href="{% url 'tienda:cart' %}"
-									class="cart"><span><i class="icon-shopping-cart"></i></span></a>
+								class="cart"><span><i class="icon-shopping-cart"></i></span></a>
 							</li>
 						</ul>
 					</div>
