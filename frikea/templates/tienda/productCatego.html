@@ -43,7 +43,7 @@
 							<div class="inner">
 								<p>
 									<a class="icon" onclick="abrir_modal_agregar('{% url 'tienda:agregar' p.id %}')"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									<a href="{% url 'tienda:single' p.id %}" class="icon"><i class="icon-eye"></i></a>
 								</p>
 							</div>
 						</div>
