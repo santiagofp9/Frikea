@@ -10,6 +10,7 @@ urlpatterns = [
     path('listcategorias/', ListaCategorias.as_view(), name='listcategorias'),
     path('producategorias/<int:pk>', CategoriaProducto.as_view(), name='producategorias'),
     path('about/', About.as_view(), name='about'),
+    path('single/<int:pk>', Single.as_view(), name='single'),
     path('contact/', Contact.as_view(), name='contact'),
     path('cart/', login_required(ListaCarrito.as_view()), name='cart'),
     path('agregar/<int:pk>', login_required(AgregarProducto.as_view()), name='agregar'),
