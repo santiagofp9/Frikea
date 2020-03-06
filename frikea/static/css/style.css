@@ -1776,7 +1776,13 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   z-index: 1;
   padding: 30px 20px;
-  font-size: 18px;
   margin-bottom: 0;
 }
 
+.prodcart {
+  margin-top: 1em ;
+}
+
+.img-responsive {
+  float: left;
+}
