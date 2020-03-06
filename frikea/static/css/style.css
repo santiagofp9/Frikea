@@ -1782,3 +1782,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .prodcart {
   margin-top: 1em ;
 }
+
+.img-responsive {
+  float: left;
+}
