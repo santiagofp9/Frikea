@@ -16,9 +16,6 @@ class Inicio(ListView):
 
 class About(TemplateView):
     template_name = 'tienda/about.html'
-
-class Single(TemplateView):
-    template_name = 'tienda/single.html'
     
 class Contact(TemplateView):
     template_name = 'tienda/contact.html'
@@ -36,6 +33,16 @@ class ListaCategorias(ListView):
     template_name = 'tienda/categories.html'
     context_object_name = 'catego'
     queryset = Categoria.objects.all()
+
+class Single(ListView):
+    model = Producto
+    template_name = 'tienda/single.html'
+
+    def get_context_data(self, **kwargs):
+       	context = super(Single, self).get_context_data(**kwargs)
+       	parametro = self.kwargs.get('pk', None)
+       	context['produ'] = Producto.objects.filter(id=parametro)
+       	return context
 
 
 class CategoriaProducto(ListView):
