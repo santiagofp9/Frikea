@@ -91,7 +91,7 @@ class ListaCarrito(ListView):
         
 
 class EliminarProducto(DeleteView):
-    model = Producto
+    model = Carrito
     success_url = reverse_lazy('tienda:cart')
 
     def get(self, request, *args, **kwargs):
