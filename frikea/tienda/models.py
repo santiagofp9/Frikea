@@ -24,3 +24,4 @@ class Carrito(models.Model):
     producto = models.ForeignKey(Producto, on_delete= models.CASCADE, null=True)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     cantidad = models.IntegerField()
+    subtotal = models.DecimalField(decimal_places=2, max_digits=6)

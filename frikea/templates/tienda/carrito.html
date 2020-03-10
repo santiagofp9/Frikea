@@ -22,8 +22,9 @@
                                     <tr>
                                         <th class="text-center cart">PRODUCTO/DESCRIPCIÓN</th>
                                         <th class="text-center cart">NOMBRE</th>
-                                        <th class="text-center cart">PRECIO</th>
+                                        <th class="text-center cart">PRECIO UNIDAD</th>
                                         <th class="text-center cart">CANTIDAD</th>
+                                        <th class="text-center cart">SUBTOTAL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +52,9 @@
                                                         class="icon-trash" aria-hidden="true"></i></a>
                                             </div>
 
+                                        </td>
+                                        <td class="price aling-middle">
+                                            <span>{{c.carrito.subtotal}}</span>
                                         </td>
                                     </tr>
                                     {% endfor %}

@@ -72,12 +72,26 @@ class AgregarProducto(CreateView):
         self.object = form.save(commit=False)
         producto = Producto.objects.get(pk = self.kwargs.get('pk', None))
         self.object.producto = producto
+        subTotal = self.object.cantidad*producto.precio
+        self.object.subTotal  = subTotal
         user = self.request.user.id
         usuario = User.objects.get(pk = user)
         self.object.usuario = usuario
         self.object.save()
         return super(AgregarProducto, self).form_valid(form)
 
+"""#SUMA CARRITO
+
+    def form_valid(self, form):
+        self.object = from.save(commit=False)
+        var=Producto.objects.get(pk=self.kwargs.get('pk', None))
+        self.object.idPro=var
+        subTotal = self.object.cantidad*var.precio
+        self.object.subTotal  =subTotal
+        self.object.idUser = self.request.user.id
+        self.object.save()
+        return super(AgregarCarrito, self).form_valid(form)
+"""
 class ListaCarrito(ListView):
     model = Carrito
     template_name = 'tienda/carrito.html'
@@ -107,7 +121,4 @@ class VaciarCarrito(View):
         
         Carrito.objects.filter(usuario=usuario).delete()
         return redirect('tienda:cart')
-        
-         
-
-
+      
